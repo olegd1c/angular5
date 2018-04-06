@@ -13,6 +13,7 @@ import { StyleDirective } from './style.directive';
 import { JavaScriptClassDirective } from './java-script-class.directive';
 import { BooksComponent } from './books/books.component';
 import { SampleComponent } from './sample/sample.component';
+import {SharedModule} from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { SampleComponent } from './sample/sample.component';
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    SharedModule
   ],
   providers: [BookService, CurrencyPipe],
   bootstrap: [AppComponent]
