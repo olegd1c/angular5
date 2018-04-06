@@ -1,1 +1,2 @@
-<div id="my_div" [innerHTML]="label"></div><button (click)="changeLabel()">Update</button>
+<div id="my_div" #text></div>
+<button (click)="changeLabel(text)">Update</button>
