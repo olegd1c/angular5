@@ -19,11 +19,11 @@ export class SampleComponent implements OnInit {
   ngOnInit() {
   }
 
-  changeLabel(elem: ElementRef) {
+  changeLabel(elem: any) {
     // this.myLabel.nativeElement.innerHTML = 'New text3';
     // this.label = 'New <b>text4</b>';
-    // elem.nativeElement.innerHTML = 'New Text5';
-    this.renderer.setProperty(this.myLabel.nativeElement,
-      'innerHTML', 'New text6');
+    elem.innerHTML = 'New Text5';
+    // this.renderer.setProperty(this.myLabel.nativeElement,
+    //   'innerHTML', 'New text6');
   }
 }
