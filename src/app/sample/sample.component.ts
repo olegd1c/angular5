@@ -8,9 +8,9 @@ import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 export class SampleComponent implements OnInit {
 
   label: string;
-
-  @ViewChild('text')
-  myLabel: ElementRef;
+  //
+  // @ViewChild('text')
+  // myLabel: ElementRef;
 
   constructor() {
   }
@@ -19,6 +19,7 @@ export class SampleComponent implements OnInit {
   }
 
   changeLabel() {
-    this.myLabel.nativeElement.innerHTML = 'New text3';
+    // this.myLabel.nativeElement.innerHTML = 'New text3';
+    this.label = 'New <b>text4</b>';
   }
 }
