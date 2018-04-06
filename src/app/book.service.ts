@@ -1,5 +1,9 @@
 import {Injectable} from '@angular/core';
 import {Book} from './book/book';
+import {Observable} from 'rxjs/Observable';
+import 'rxjs/add/observable/of';
+import 'rxjs/add/operator/delay';
+import 'rxjs/add/operator/repeat';
 
 @Injectable()
 export class BookService {
@@ -14,8 +18,19 @@ export class BookService {
     this.addBook(new Book('Switching to Angular 2', 'Minko Gechev', 2016, 'Start using TypeScript to supercharge your Angular 2 applications', 254, 10));
   }
 
-  getBooks(): Array<Book> {
-    return this.books;
+  getBooks(): Observable<Array<Book>> {
+    return Observable.of(this.shuffleArray(this.books))
+      .delay(100).repeat(100);
+  }
+
+  shuffleArray(array: Array<any>) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      const temp = array[i];
+      array[i] = array[j];
+      array[j] = temp;
+    }
+    return array;
   }
 
   private addBook(book: Book): void {

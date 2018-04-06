@@ -1,3 +1,4 @@
+<app-banner></app-banner>
 <div>
   <div>Input number of books: <input [(ngModel)]="bookNumber"></div>
   <div *ngFor="let book of books | slice : 0: bookNumber | sort : 'title'" appJavaScriptClass [currentBook]="book">

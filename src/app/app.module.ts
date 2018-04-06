@@ -17,6 +17,10 @@ import {SharedModule} from './shared/shared.module';
 import { StatusComponent } from './status/status.component';
 import {SubjectEventBusService} from './bus/subject-event-bus.service';
 import { CounterComponent } from './counter/counter.component';
+import { BannerComponent } from './banner/banner.component';
+import { BestBuyComponent } from './best-buy/best-buy.component';
+import { DiscountsComponent } from './discounts/discounts.component';
+import {BannerService} from './banner.service';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,10 @@ import { CounterComponent } from './counter/counter.component';
     BooksComponent,
     SampleComponent,
     StatusComponent,
-    CounterComponent
+    CounterComponent,
+    BannerComponent,
+    BestBuyComponent,
+    DiscountsComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +45,8 @@ import { CounterComponent } from './counter/counter.component';
     HttpModule,
     SharedModule
   ],
-  providers: [BookService, CurrencyPipe, SubjectEventBusService],
-  bootstrap: [AppComponent]
+  providers: [BookService, CurrencyPipe, SubjectEventBusService, BannerService],
+  bootstrap: [AppComponent],
+  entryComponents: [DiscountsComponent, BestBuyComponent]
 })
 export class AppModule { }
