@@ -4,6 +4,7 @@ import {BookService} from '../book.service';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/range';
 import 'rxjs/add/operator/map';
+import {AsyncEventBusService} from '../bus/async-event-bus.service';
 
 @Component({
   selector: 'app-books',
@@ -15,14 +16,15 @@ export class BooksComponent {
 
   books: Array<Book>;
 
-  constructor(private bookService: BookService) {
-    Observable.range(0, 25).map(x => String.fromCharCode(x + 'a'.charCodeAt(0)))
-      .subscribe(x => console.log(x));
-
+  constructor(private bookService: BookService,
+              private eventBus: AsyncEventBusService) {
     this.refreshBooks();
   }
 
   refreshBooks(): void {
+    this.eventBus.sendEvent({message: 'Books loading ...', source: this});
     this.books = this.bookService.getBooks();
+    this.eventBus.sendEvent({message: 'Books loaded', source: this});
+
   }
 }

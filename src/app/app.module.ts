@@ -14,6 +14,8 @@ import { JavaScriptClassDirective } from './java-script-class.directive';
 import { BooksComponent } from './books/books.component';
 import { SampleComponent } from './sample/sample.component';
 import {SharedModule} from './shared/shared.module';
+import { StatusComponent } from './status/status.component';
+import {AsyncEventBusService} from './bus/async-event-bus.service';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,8 @@ import {SharedModule} from './shared/shared.module';
     StyleDirective,
     JavaScriptClassDirective,
     BooksComponent,
-    SampleComponent
+    SampleComponent,
+    StatusComponent
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,7 @@ import {SharedModule} from './shared/shared.module';
     HttpModule,
     SharedModule
   ],
-  providers: [BookService, CurrencyPipe],
+  providers: [BookService, CurrencyPipe, AsyncEventBusService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
