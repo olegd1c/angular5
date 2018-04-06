@@ -2,9 +2,10 @@ import {Injectable} from '@angular/core';
 import {Subject} from 'rxjs/Subject';
 import {ApplicationEvent} from './application-event';
 import {EventConsumer} from './event-consumer';
+import {EventBus} from './event-bus';
 
 @Injectable()
-export class AsyncEventBusService {
+export class SubjectEventBusService implements EventBus{
 
   private subject = new Subject<ApplicationEvent>();
 

@@ -15,7 +15,8 @@ import { BooksComponent } from './books/books.component';
 import { SampleComponent } from './sample/sample.component';
 import {SharedModule} from './shared/shared.module';
 import { StatusComponent } from './status/status.component';
-import {AsyncEventBusService} from './bus/async-event-bus.service';
+import {SubjectEventBusService} from './bus/subject-event-bus.service';
+import { CounterComponent } from './counter/counter.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import {AsyncEventBusService} from './bus/async-event-bus.service';
     JavaScriptClassDirective,
     BooksComponent,
     SampleComponent,
-    StatusComponent
+    StatusComponent,
+    CounterComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +38,7 @@ import {AsyncEventBusService} from './bus/async-event-bus.service';
     HttpModule,
     SharedModule
   ],
-  providers: [BookService, CurrencyPipe, AsyncEventBusService],
+  providers: [BookService, CurrencyPipe, SubjectEventBusService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

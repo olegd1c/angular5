@@ -4,7 +4,7 @@ import {BookService} from '../book.service';
 import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/range';
 import 'rxjs/add/operator/map';
-import {AsyncEventBusService} from '../bus/async-event-bus.service';
+import {SubjectEventBusService} from '../bus/subject-event-bus.service';
 
 @Component({
   selector: 'app-books',
@@ -17,7 +17,7 @@ export class BooksComponent {
   books: Array<Book>;
 
   constructor(private bookService: BookService,
-              private eventBus: AsyncEventBusService) {
+              private eventBus: SubjectEventBusService) {
     this.refreshBooks();
   }
 

@@ -1,15 +1,15 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { AsyncEventBusService } from './async-event-bus.service';
+import { SubjectEventBusService } from './subject-event-bus.service';
 
-describe('AsyncEventBusService', () => {
+describe('SubjectEventBusService', () => {
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [AsyncEventBusService]
+      providers: [SubjectEventBusService]
     });
   });
 
-  it('should be created', inject([AsyncEventBusService], (service: AsyncEventBusService) => {
+  it('should be created', inject([SubjectEventBusService], (service: SubjectEventBusService) => {
     expect(service).toBeTruthy();
   }));
 });

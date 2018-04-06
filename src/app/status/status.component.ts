@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {AsyncEventBusService} from '../bus/async-event-bus.service';
+import {SubjectEventBusService} from '../bus/subject-event-bus.service';
 import {ApplicationEvent} from '../bus/application-event';
 import {EventConsumer} from '../bus/event-consumer';
 
@@ -12,7 +12,7 @@ export class StatusComponent implements OnInit, EventConsumer {
 
   notifications: Array<string> = [];
 
-  constructor(eventBus: AsyncEventBusService) {
+  constructor(eventBus: SubjectEventBusService) {
     eventBus.subscribe(this);
   }
 
