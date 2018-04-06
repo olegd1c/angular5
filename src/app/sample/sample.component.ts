@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 
 @Component({
   selector: 'app-sample',
@@ -9,6 +9,9 @@ export class SampleComponent implements OnInit {
 
   label: string;
 
+  @ViewChild('text')
+  myLabel: ElementRef;
+
   constructor() {
   }
 
@@ -16,6 +19,6 @@ export class SampleComponent implements OnInit {
   }
 
   changeLabel() {
-    this.label = 'New text2';
+    this.myLabel.nativeElement.innerHTML = 'New text3';
   }
 }
