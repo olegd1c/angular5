@@ -21,6 +21,8 @@ import { BannerComponent } from './banner/banner.component';
 import { BestBuyComponent } from './best-buy/best-buy.component';
 import { DiscountsComponent } from './discounts/discounts.component';
 import {BannerService} from './banner.service';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,9 @@ import {BannerService} from './banner.service';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule,
+    MatButtonModule
   ],
   providers: [BookService, CurrencyPipe, SubjectEventBusService, BannerService],
   bootstrap: [AppComponent],
