@@ -24,8 +24,9 @@ export class BooksComponent {
               private eventBus: SubjectEventBusService,
               private cdr: ChangeDetectorRef) {
     this.refreshBooks();
-    Observable.of(1).map(x => Math.random())
-      .delay(5).repeat(100).subscribe(res => this.randomValue = res);
+    // Observable.of(1).map(x => Math.random())
+    //   .delay(5).repeat(100).subscribe(res => this.randomValue = res);
+
   }
 
   refreshBooks(): void {
@@ -34,6 +35,7 @@ export class BooksComponent {
     this.eventBus.sendEvent({message: 'Books loaded', source: this});
 
   }
+
   //
   // ngOnInit(): void {
   //   this.cdr.detach();
