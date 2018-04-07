@@ -1,9 +1,9 @@
 import {ChangeDetectorRef, Component, OnInit} from '@angular/core';
-import {Book} from '../book/book';
+import {Book} from '../book';
 import {BookService} from '../book.service';
 import 'rxjs/add/observable/range';
 import 'rxjs/add/operator/map';
-import {SubjectEventBusService} from '../bus/subject-event-bus.service';
+import {SubjectEventBusService} from '../../bus/subject-event-bus.service';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/repeat';
 import {MatDialog, MatDialogRef} from '@angular/material';

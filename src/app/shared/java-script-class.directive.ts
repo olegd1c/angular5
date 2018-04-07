@@ -1,5 +1,5 @@
 import {Directive, HostBinding, Input, OnInit} from '@angular/core';
-import {Book} from "./book/book";
+import {Book} from "../book/book";
 
 @Directive({
   selector: '[appJavaScriptClass]'

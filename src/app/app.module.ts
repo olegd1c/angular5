@@ -1,28 +1,28 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import {HttpModule} from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { BookComponent } from './book/book.component';
-import {BookService} from "./book.service";
-import { QuotePipe } from './quote.pipe';
-import {CurrencyPipe} from "@angular/common";
-import { BookRegistrationComponent } from './book-registration/book-registration.component';
-import { StyleDirective } from './style.directive';
-import { JavaScriptClassDirective } from './java-script-class.directive';
-import { BooksComponent } from './books/books.component';
-import { SampleComponent } from './sample/sample.component';
+import {AppComponent} from './app.component';
+import {BookService} from './book/book.service';
+import {QuotePipe} from './shared/quote.pipe';
+import {CurrencyPipe} from '@angular/common';
+import {BookRegistrationComponent} from './book/book-registration/book-registration.component';
+import {StyleDirective} from './shared/style.directive';
+import {JavaScriptClassDirective} from './shared/java-script-class.directive';
+import {BooksComponent} from './book/books/books.component';
+import {SampleComponent} from './sample/sample.component';
 import {SharedModule} from './shared/shared.module';
-import { StatusComponent } from './status/status.component';
+import {StatusComponent} from './status/status.component';
 import {SubjectEventBusService} from './bus/subject-event-bus.service';
-import { CounterComponent } from './counter/counter.component';
-import { BannerComponent } from './banner/banner.component';
-import { BestBuyComponent } from './best-buy/best-buy.component';
-import { DiscountsComponent } from './discounts/discounts.component';
-import {BannerService} from './banner.service';
+import {CounterComponent} from './counter/counter.component';
+import {BestBuyComponent} from './banner/best-buy/best-buy.component';
+import {DiscountsComponent} from './banner/discounts/discounts.component';
+import {BannerService} from './banner/banner.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatDialogModule, MatInputModule} from '@angular/material';
+import {BannerComponent} from './banner/banner/banner.component';
+import {BookComponent} from './book/book/book.component';
 
 @NgModule({
   declarations: [
@@ -54,6 +54,7 @@ import {MatButtonModule, MatDialogModule, MatInputModule} from '@angular/materia
   providers: [BookService, CurrencyPipe, SubjectEventBusService, BannerService],
   bootstrap: [AppComponent],
   entryComponents: [DiscountsComponent, BestBuyComponent,
-  BookRegistrationComponent]
+    BookRegistrationComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
