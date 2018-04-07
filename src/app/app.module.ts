@@ -20,30 +20,26 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatButtonModule, MatDialogModule, MatInputModule} from '@angular/material';
 import {BannerComponent} from './banner/banner/banner.component';
 import {BookComponent} from './book/book/book.component';
+import {RouterModule} from '@angular/router';
+import {ROUTES} from './app.routes';
+import {BookModule} from './book/book.module';
+import {NewsModule} from './news/news.module';
 
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent,
-    BookRegistrationComponent,
-    BooksComponent,
     SampleComponent,
     StatusComponent,
     CounterComponent,
-    BannerComponent,
-    BestBuyComponent,
-    DiscountsComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
     HttpModule,
     SharedModule,
     BrowserAnimationsModule,
-    MatButtonModule,
-    MatInputModule,
-    MatDialogModule
+    RouterModule.forRoot(ROUTES),
+    BookModule,
+    NewsModule
   ],
   providers: [BookService, CurrencyPipe, SubjectEventBusService, BannerService],
   bootstrap: [AppComponent],
