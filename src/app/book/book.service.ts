@@ -4,13 +4,14 @@ import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/repeat';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 @Injectable()
 export class BookService {
 
   books: Array<Book>;
 
-  constructor() {
+  constructor(private http: HttpClient) {
     this.books = new Array<Book>();
     this.addBook(new Book('JavaScript: The Good Parts', 'Douglas Crockford', 2008,
       'This authoritative book scrapes away these bad features to reveal a subset of JavaScript that\'s more reliable, readable, and maintainable', 172, 150.344));
@@ -19,8 +20,10 @@ export class BookService {
   }
 
   getBooks(): Observable<Array<Book>> {
-    return Observable.of(this.shuffleArray(this.books))
-      .delay(100).repeat(100);
+    // const headers: HttpHeaders = new HttpHeaders()
+    //   .set('my_header', '1')
+    //   .set('new_header', '2');
+    return this.http.get<Array<Book>>('/books.json');
   }
 
   shuffleArray(array: Array<any>) {

@@ -7,6 +7,8 @@ import {BookRegistrationComponent} from './book-registration/book-registration.c
 import {BannerModule} from '../banner/banner.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {MatButtonModule, MatDialogModule, MatInputModule} from '@angular/material';
+import {BookService} from './book.service';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   imports: [
@@ -18,9 +20,11 @@ import {MatButtonModule, MatDialogModule, MatInputModule} from '@angular/materia
     MatButtonModule,
     MatInputModule,
     MatDialogModule,
+    HttpClientModule
   ],
   declarations: [BookComponent, BooksComponent, BookRegistrationComponent],
-  exports: [BooksComponent]
+  exports: [BooksComponent],
+  providers: [BookService]
 })
 export class BookModule {
 }

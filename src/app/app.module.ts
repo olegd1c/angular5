@@ -41,7 +41,7 @@ import {NewsModule} from './news/news.module';
     BookModule,
     NewsModule
   ],
-  providers: [BookService, CurrencyPipe, SubjectEventBusService, BannerService],
+  providers: [CurrencyPipe, SubjectEventBusService],
   bootstrap: [AppComponent],
   entryComponents: [DiscountsComponent, BestBuyComponent,
     BookRegistrationComponent]

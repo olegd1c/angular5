@@ -8,13 +8,15 @@ import 'rxjs/add/operator/delay';
 import 'rxjs/add/operator/repeat';
 import {MatDialog, MatDialogRef} from '@angular/material';
 import {BookRegistrationComponent} from '../book-registration/book-registration.component';
+import {Router} from '@angular/router';
+import {BannerComponent} from '../../banner/banner/banner.component';
 
 @Component({
   selector: 'app-books',
   templateUrl: './books.component.html',
   styleUrls: ['./books.component.css']
 })
-export class BooksComponent {
+export class BooksComponent implements OnInit{
   randomValue: number;
 
   bookNumber: number;
@@ -24,7 +26,7 @@ export class BooksComponent {
   constructor(private bookService: BookService,
               private eventBus: SubjectEventBusService,
               private cdr: ChangeDetectorRef,
-              private matDialog: MatDialog) {
+              private matDialog: MatDialog, private router: Router) {
     this.refreshBooks();
     // Observable.of(1).map(x => Math.random())
     //   .delay(5).repeat(100).subscribe(res => this.randomValue = res);
@@ -38,15 +40,15 @@ export class BooksComponent {
 
   }
 
-  //
-  // ngOnInit(): void {
-  //   this.cdr.detach();
-  //   setTimeout(() => {
-  //     this.cdr.reattach();
-  //     this.cdr.detectChanges();
-  //      this.cdr.detach();
-  //   }, 2000);
-  // }
+  ngOnInit(): void {
+    // this.router.config.push()
+    // this.router.resetConfig(
+    //   [{
+    //     path: 'app-books', component: BannerComponent
+    //   }]
+    // );
+  }
+
   openBookDialog() {
     const dialogRef = this.matDialog.open(BookRegistrationComponent,
       {
