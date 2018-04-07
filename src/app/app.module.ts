@@ -35,7 +35,7 @@ import {ServiceWorkerModule} from '@angular/service-worker';
     CounterComponent,
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     HttpModule,
     SharedModule,
     BrowserAnimationsModule,
