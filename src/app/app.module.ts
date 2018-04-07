@@ -24,6 +24,8 @@ import {RouterModule} from '@angular/router';
 import {ROUTES} from './app.routes';
 import {BookModule} from './book/book.module';
 import {NewsModule} from './news/news.module';
+import {environment} from '../environments/environment';
+import {ServiceWorkerModule} from '@angular/service-worker';
 
 @NgModule({
   declarations: [
@@ -39,7 +41,8 @@ import {NewsModule} from './news/news.module';
     BrowserAnimationsModule,
     RouterModule.forRoot(ROUTES),
     BookModule,
-    NewsModule
+    NewsModule,
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [CurrencyPipe, SubjectEventBusService],
   bootstrap: [AppComponent],
