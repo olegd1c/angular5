@@ -1,27 +1,36 @@
-<form (ngSubmit)="createBook()" [formGroup]="bookForm">
-  <div>
-    <mat-form-field class="example-full-width">
-      <input id="title" type="text" matInput placeholder="Book title" formControlName="title">
-    </mat-form-field>
-    <mat-error *ngIf="isInvalid('title')" >Please, enter book title</mat-error>
-  </div>
-  <div>
-    <label for="author">Author</label>
-    <input type="text" id="author" formControlName="author">
-    <div *ngIf="isInvalid('author')" style="color:red">Please, enter book author</div>
-  </div>
-  <div>
-    <label for="year">Year</label>
-    <input type="text" id="year" formControlName="year" ngModel>
-  </div>
-  <div>
-    <label for="pages">Pages</label>
-    <input type="text" id="pages" formControlName="pages">
-  </div>
-  <div>
-    <label for="description">Description</label>
-    <textarea type="text" id="description" formControlName="description"></textarea>
-  </div>
-
-  <button mat-button type="submit" [disabled]="!bookForm.valid">Save</button>
-</form>
+<h2 mat-dialog-title>New book</h2>
+<mat-dialog-content>
+  <form (ngSubmit)="createBook()" [formGroup]="bookForm">
+    <div>
+      <mat-form-field class="example-full-width">
+        <input id="title" type="text" matInput placeholder="Book title" formControlName="title">
+      </mat-form-field>
+      <mat-error *ngIf="isInvalid('title')">Please, enter book title</mat-error>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width">
+        <input type="text" matInput placeholder="Author" formControlName="title">
+      </mat-form-field>
+      <mat-error *ngIf="isInvalid('author')">Please, enter book author</mat-error>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width">
+        <input matInput ormControlName="year" placeholder="Year">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width">
+        <input matInput formControlName="pages" placeholder="Pages">
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field class="example-full-width">
+        <textarea formControlName="description" matInput placeholder="Description"></textarea>
+      </mat-form-field>
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close [disabled]="!bookForm.valid">Save</button>
+  <button mat-button [mat-dialog-close]="true">Cancel</button>
+</mat-dialog-actions>

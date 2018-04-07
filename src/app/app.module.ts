@@ -22,7 +22,7 @@ import { BestBuyComponent } from './best-buy/best-buy.component';
 import { DiscountsComponent } from './discounts/discounts.component';
 import {BannerService} from './banner.service';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatButtonModule, MatInputModule} from '@angular/material';
+import {MatButtonModule, MatDialogModule, MatInputModule} from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -48,10 +48,12 @@ import {MatButtonModule, MatInputModule} from '@angular/material';
     SharedModule,
     BrowserAnimationsModule,
     MatButtonModule,
-    MatInputModule
+    MatInputModule,
+    MatDialogModule
   ],
   providers: [BookService, CurrencyPipe, SubjectEventBusService, BannerService],
   bootstrap: [AppComponent],
-  entryComponents: [DiscountsComponent, BestBuyComponent]
+  entryComponents: [DiscountsComponent, BestBuyComponent,
+  BookRegistrationComponent]
 })
 export class AppModule { }
