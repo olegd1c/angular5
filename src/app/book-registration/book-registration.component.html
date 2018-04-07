@@ -1,8 +1,9 @@
 <form (ngSubmit)="createBook()" [formGroup]="bookForm">
   <div>
-    <label for="title">Title</label>
-    <input id="title" type="text" formControlName="title">
-    <div *ngIf="isInvalid('title')" style="color:red">Please, enter book title</div>
+    <mat-form-field class="example-full-width">
+      <input id="title" type="text" matInput placeholder="Book title" formControlName="title">
+    </mat-form-field>
+    <mat-error *ngIf="isInvalid('title')" >Please, enter book title</mat-error>
   </div>
   <div>
     <label for="author">Author</label>
