@@ -5,11 +5,8 @@ import {HttpModule} from '@angular/http';
 
 import {AppComponent} from './app.component';
 import {BookService} from './book/book.service';
-import {QuotePipe} from './shared/quote.pipe';
 import {CurrencyPipe} from '@angular/common';
 import {BookRegistrationComponent} from './book/book-registration/book-registration.component';
-import {StyleDirective} from './shared/style.directive';
-import {JavaScriptClassDirective} from './shared/java-script-class.directive';
 import {BooksComponent} from './book/books/books.component';
 import {SampleComponent} from './sample/sample.component';
 import {SharedModule} from './shared/shared.module';
@@ -28,10 +25,7 @@ import {BookComponent} from './book/book/book.component';
   declarations: [
     AppComponent,
     BookComponent,
-    QuotePipe,
     BookRegistrationComponent,
-    StyleDirective,
-    JavaScriptClassDirective,
     BooksComponent,
     SampleComponent,
     StatusComponent,
