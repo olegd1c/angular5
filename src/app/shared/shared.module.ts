@@ -13,7 +13,7 @@ import {JavaScriptClassDirective} from './java-script-class.directive';
     QuotePipe,
     StyleDirective,
     JavaScriptClassDirective],
-  exports: [SortPipe]
+  exports: [SortPipe, QuotePipe, JavaScriptClassDirective, StyleDirective]
 })
 export class SharedModule {
 }
